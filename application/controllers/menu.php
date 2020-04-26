@@ -51,6 +51,13 @@ class Menu extends CI_Controller{
 		$this->load->view('v_detail_menu',$x);
 	}
 
+	function kategori($kategori_id)
+	{
+		$x['get_all_kategori']=$this->m_kategori->get_all_kategori();
+		$x['get_produk_kategori']=$this->m_menu->get_produk_kategori($kategori_id);
+		$this->load->view('kiosbintuni/kategori');
+
+	}
 	function add_to_cart(){
 		$kode=$this->uri->segment(3);
 		$produk=$this->m_menu->detail_menu($kode);

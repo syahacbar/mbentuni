@@ -6,13 +6,24 @@ class M_menu extends CI_Model{
 		return $hsl;	
 	}
 
-	function get_all_produk($limit,$offset){
-		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,menu_harga_lama AS harga_lama, menu_harga_baru AS harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status FROM tbl_menu ORDER by RAND() LIMIT $limit OFFSET $offset");
+	function get_all_produk(){
+		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,menu_harga_lama AS harga_lama, menu_harga_baru AS harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status FROM tbl_menu ORDER by menu_id DESC");
 		return $hsl;	
 	}
 
-	function get_random_produk($limit,$offset){
-		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,menu_harga_lama AS harga_lama, menu_harga_baru AS harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status FROM tbl_menu ORDER by menu_id DESC LIMIT $limit OFFSET $offset");
+	function get_kategori_name($kategori_id)
+	{
+		$hsl=$this->db->query("SELECT kategori_nama FROM tbl_kategori WHERE kategori_id='$kategori_id'");
+		return $hsl->row();
+	}
+
+	function get_produk_kategori($kategori_id){
+		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,menu_harga_lama AS harga_lama, menu_harga_baru AS harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status, kategori_nama FROM tbl_menu JOIN tbl_kategori ON tbl_kategori.kategori_id=tbl_menu.menu_kategori_id WHERE menu_kategori_id='$kategori_id' ORDER by menu_id DESC");
+		return $hsl;	
+	}
+
+	function get_random_produk(){
+		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,menu_harga_lama AS harga_lama, menu_harga_baru AS harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status FROM tbl_menu ORDER by RAND() LIMIT 10");
 		return $hsl;	
 	}
 

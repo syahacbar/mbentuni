@@ -145,22 +145,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										});
 									});
 								</script>
-						  </div>					
-		  	         </div>
-						    <div class="header_bottom_right">					 
-						 	    <!------ Slider ------------>
-								  <div class="slider">
-							      	<div class="slider-wrapper theme-default">
-							            <div id="slider" class="nivoSlider">
-							                <img src="<?php echo base_url('assets/kiosbintuni/smartphone/images/1.png');?>" data-thumb="<?php echo base_url('assets/kiosbintuni/smartphone/images/1.png');?>" alt="" />
-							                <img src="<?php echo base_url('assets/kiosbintuni/smartphone/images/2.png');?>" data-thumb="<?php echo base_url('assets/kiosbintuni/smartphone/images/2.png');?>" alt="" />
-							                <img src="<?php echo base_url('assets/kiosbintuni/smartphone/images/3.png');?>" data-thumb="<?php echo base_url('assets/kiosbintuni/smartphone/images/3.png');?>" alt="" />
-							                
-							            </div>
-							        </div>
-								</div>
-							</div>
-						<!------End Slider ------------>
+						  </div>
 			         </div>
 			     <div class="clear"></div>
 			</div>
@@ -172,95 +157,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    			<h3>Promo Belanja</h3>
+    		<h3><?php echo $kategori_name;?></h3>
     		</div>
-    	</div>
-	    <div class="section group">
-		<?php 
-			$i = 0;
-			foreach ($get_random_produk->result_array() as $a) { 
-		?>
-			<div class="grid_1_of_2 images_1_of_2">
-				<a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img height="100" src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
-				<h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
-				<div class="price-details">
-			       <div class="price-number">
-						<p><span class="rupees"><?php echo $a['harga_baru'];?></span></p>
-				    </div>
-			   		<div class="add-cart">								
-						<h4><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>">Add to Cart</a></h4>
-				    </div>
-					<div class="clear"></div>
-				</div>					 
-			</div>
-			<?php
-				$i++;
-				if ($i%2==0){
-					echo '</div><div class="section group">';
-				}
-			?>
-        <?php } ?>	
-		</div>
-		<div class="content_bottom">
-    		<div class="heading">
-    		<h3>Paling Populer</h3>
-    		</div>
-    	  </div>
-			<div class="section group">
-			<?php foreach ($hot_promo1->result_array() as $a) { ?>
+        </div>
+        <div class="section group">
+            <?php 
+            $i=0;
+            foreach ($get_produk_kategori->result_array() as $a) { ?>
 				<div class="grid_1_of_2 images_1_of_2">
-					 <a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
-					 <h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
+					<a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
+					<h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
 					<div class="price-details">
-				       <div class="price-number">
+				        <div class="price-number">
 							<p><span class="rupees"><?php echo $a['harga_baru'];?></span></p>
 					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
+					    <div class="add-cart">								
+							<h4><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>">Add to Cart</a></h4>
+						</div>
+						<div class="clear"></div>
 					</div>					 
-				</div>
-          <?php } ?>				
-		</div>
+                </div>
+        <?php
+        $i++;
+        if ($i%2==0){
+        echo '</div><div class="section group">';
+        }
+        ?>
+            <?php } ?>	
+        </div>
 			
-			<div class="section group">
-			<?php foreach ($hot_promo2->result_array() as $a) { ?>
-				<div class="grid_1_of_2 images_1_of_2">
-					 <a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
-					 <h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees"><?php echo $a['harga_baru'];?></span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>					 
-				</div>
-          <?php } ?>				
-			</div>
 			
-			<div class="section group">
-			<?php foreach ($hot_promo3->result_array() as $a) { ?>
-				<div class="grid_1_of_2 images_1_of_2">
-					 <a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
-					 <h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees"><?php echo $a['harga_baru'];?></span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>					 
-				</div>
-          <?php } ?>				
-			</div>
-			</div>
-       </div>
   </div>
 </div>
 </body>

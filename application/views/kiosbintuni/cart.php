@@ -57,6 +57,14 @@ h2 {
 					<div class="logo">
 						<a href="<?php echo base_url();?>"><img src="<?php echo base_url('assets/kiosbintuni/smartphone/images/logo.png');?>" alt="" /></a>
 					</div>
+						<div class="header_top_right">
+							<div class="cart">
+			  	 				<div id="dd" class="wrapper-dropdown-3">
+									<a href="<?php echo base_url().'menu/check_out'?>">
+										Next <img width="20" height="20" src="<?php echo base_url('assets/kiosbintuni/smartphone/images/next.png');?>" alt="" />
+									</a>
+							</div>
+						</div>	
 						
 						 <div class="clear"></div>
 						  <script type="text/javascript">
@@ -130,7 +138,7 @@ h2 {
       <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Keranjang Belanja</h3>
+    		<h3>Keranjang Belanja <span style="float:right;font-weight:bold">Rp. <?php echo number_format($this->cart->total());?></span></h3>
     		</div>
 		</div>  
 		<br>
@@ -144,7 +152,7 @@ h2 {
 					echo form_hidden($i.'[rowid]', $items['rowid']);
 			?>
 			<div id="kiri">
-				<img width="90%" src="<?php echo base_url().'assets/gambar/'.$items['image'];?>" alt="" />
+				<img width="90%" height="80" src="<?php echo base_url().'assets/gambar/'.$items['image'];?>" alt="" />
 			</div>
 			<div id="kanan">
 				<a href="<?php echo base_url().'menu/remove/'.$items['rowid'];?>" style="text-decoration:none;">X</a>
