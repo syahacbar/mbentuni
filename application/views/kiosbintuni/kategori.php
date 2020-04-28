@@ -126,7 +126,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					                             <li><a href="<?php echo base_url('kategori/id').'/'.$a['kategori_id'];?>"><?php echo $a['kategori_nama'];?></a></li>
 											  <?php } ?>
 					                         </ul>
-									  </div>	
+									  </div>	 
 									</div>								
 								</div>
 								<script type="text/javascript">
@@ -165,7 +165,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             $i=0;
             foreach ($get_produk_kategori->result_array() as $a) { ?>
 				<div class="grid_1_of_2 images_1_of_2">
-					<a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
+					<a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><img height="100"  src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" alt="" /></a>
 					<h2><a href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"><?php echo $a['menu_nama'];?></a></h2>
 					<div class="price-details">
 				        <div class="price-number">
