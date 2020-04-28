@@ -84,7 +84,7 @@
 
 					<div class="menubar-foot-panel">
 						<small class="no-linebreak hidden-folded">
-							<span class="opacity-75">&copy; <?php echo '2017';?></span> <strong>Mfikri.com</strong>
+							<span class="opacity-75">&copy; <?php echo '2017';?></span> <strong>Mbentuni</strong>
 						</small>
 					</div>
 				</div><!--end .menubar-scroll-panel-->
